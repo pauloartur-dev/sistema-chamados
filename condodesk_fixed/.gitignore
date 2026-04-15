@@ -1,0 +1,11 @@
+target/
+*.class
+*.war
+*.jar
+!**/src/main/**/**.jar
+uploads/
+.env
+*.log
+.idea/
+*.iml
+.DS_Store
