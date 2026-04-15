@@ -9,4 +9,4 @@ WORKDIR /app
 RUN mkdir -p /app/uploads
 COPY --from=builder /app/target/*.war app.war
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "-Dserver.port=${PORT:8080}", "-Dspring.profiles.active=docker", "app.war"]
+ENTRYPOINT ["sh", "-c", "java -jar -Dserver.port=${PORT:-8080} -Dspring.profiles.active=docker app.war"]
